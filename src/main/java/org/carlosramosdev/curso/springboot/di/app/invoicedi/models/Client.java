@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Client {
-    @Value("${client.name")
+    @Value("${client.name}")
     private String name;
     @Value("${client.lastname}")
     private String lastname;

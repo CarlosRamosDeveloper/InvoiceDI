@@ -1,5 +1,7 @@
 package org.carlosramosdev.curso.springboot.di.app.invoicedi.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Item {
     private Product product;
     private int quantity;
@@ -26,5 +28,9 @@ public class Item {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public double getTotal (){
+        return quantity * product.getPrice();
     }
 }
