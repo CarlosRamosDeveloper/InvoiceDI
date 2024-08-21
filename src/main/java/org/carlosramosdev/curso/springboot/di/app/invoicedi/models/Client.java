@@ -1,7 +1,11 @@
 package org.carlosramosdev.curso.springboot.di.app.invoicedi.models;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Client {
+    @Value("${client.name")
     private String name;
+    @Value("${client.lastname}")
     private String lastname;
 
     public Client() {
