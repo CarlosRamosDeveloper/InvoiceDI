@@ -1,6 +1,7 @@
 package org.carlosramosdev.curso.springboot.di.app.invoicedi.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -10,9 +11,10 @@ import java.util.List;
 public class Invoice {
     @Autowired
     private Client client;
-    @Value("${invoice.description}")
+    @Value("${invoice.description.sports}")
     private String description;
     @Autowired
+    @Qualifier("ItemsInvoiceSport")
     private List<Item> items;
 
     public Invoice() {
@@ -47,7 +49,6 @@ public class Invoice {
 
         for (Item item:items) {
             total += item.getTotal();
-            
         }
 
         return total;
