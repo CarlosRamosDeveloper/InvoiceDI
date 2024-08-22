@@ -43,6 +43,13 @@ public class Invoice {
     }
 
     public double getFinalPrice(){
-        return 0;
+        double total = 0;
+
+        for (Item item:items) {
+            total += item.getTotal();
+            
+        }
+
+        return total;
     }
 }
