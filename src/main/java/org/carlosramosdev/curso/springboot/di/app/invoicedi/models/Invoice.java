@@ -1,6 +1,7 @@
 package org.carlosramosdev.curso.springboot.di.app.invoicedi.models;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,7 +25,11 @@ public class Invoice {
     @PostConstruct
     public void init(){
         System.out.println("Creando el componente de la factura");
+    }
 
+    @PreDestroy
+    public void destroy(){
+        System.out.println("Destroyendo el componente o bean invoice");
     }
 
     public Client getClient() {
